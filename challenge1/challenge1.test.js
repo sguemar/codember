@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { removeBots } from './challenge01'
+import { removeBots } from './challenge1'
 import { twoValidUsers, twoValidUsersInDifferentLines, userInDifferentLines } from './inputExamples'
 
 describe('Fix twitter!', () => {
