@@ -1,19 +1,11 @@
 const REQUIRED_USERS_FIELDS = ['usr', 'eme', 'psw', 'age', 'loc', 'fll']
 
-const getUsersData = (input) => {
-  const inputLines = input.split('\n')
-  const users = []
-  let nextUser = ''
-  inputLines.forEach(line => {
-    if (line !== '') nextUser = `${nextUser} ${line}`
-    else {
-      users.push(nextUser)
-      nextUser = ''
-    }
-  })
-  if (nextUser !== '') users.push(nextUser)
-  return users.map(user => user.split(' '))
-}
+const getUsersData = (input) =>
+  input
+    // Separate each user
+    .split('\n\n')
+    // Format users removing newlines and dividing by fields
+    .map(user => user.replaceAll('\n', ' ').split(' '))
 
 const isUserValid = (userFields) =>
   REQUIRED_USERS_FIELDS.every(requiredField =>
