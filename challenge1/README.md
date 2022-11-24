@@ -1,6 +1,6 @@
 # Challenge 1: Fix Twitter!
 
-Problem
+## Problem
 
 Twitter has been bought and they want to remove the bots. They have asked for your help to detect the number of users in their database that have corrupted data.
 
@@ -15,7 +15,7 @@ The database is very old and it's in a strange format. The profiles require the 
 
 Everything is in a file where the user data is a sequence of `key:value` pairs, which can be on the same line or separated by lines, and each user is separated by a newline. Be careful because it can be all mixed up!
 
-Input example:
+### Input example:
 
     usr:@midudev eme:mi@gmail.com psw:123456 age:22 loc:bcn fll:82
 
@@ -32,7 +32,7 @@ The fourth user IS valid. It has all the fields..
 
 Now that you know this, use this input to detect the incorrect users: https://codember.dev/users.txt
 
-Hints
+## Hints:
 
 - The data can be in any order.
 - The data can be on the same line or separated by lines.
@@ -40,8 +40,8 @@ Hints
 - The users can be repeated, but it doesn't matter, they are still valid.
 - There can be data that is not necessary for the user but that does not make them invalid.
 
-__How to submit the solution__
+## How to submit the solution
 
 Use the "submit" command to send your solution with the number of correct users + the name of the last valid user. For example:
 
-$ submit 482@midudev
+    $ submit 482@midudev
