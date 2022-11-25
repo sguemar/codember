@@ -1,7 +1,7 @@
 {
   "name": "codember-challenges",
   "version": "1.0.0",
-  "description": "",
+  "description": "Solutions to https://codember.dev/ challenges",
   "main": "index.js",
   "type": "module",
   "scripts": {
