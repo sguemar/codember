@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
-import { removeBots } from './challenge1'
-import { twoValidUsers, twoValidUsersInDifferentLines, userInDifferentLines } from './inputExamples'
+import { removeBots } from '../challenge1'
+import { twoValidUsers, twoValidUsersInDifferentLines, userInDifferentLines } from './userExamples'
 
 describe('Fix twitter!', () => {
   it('should be a function', () => {
