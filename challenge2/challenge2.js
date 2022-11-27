@@ -1,6 +1,10 @@
 const MIN_LOWERCASE_LETTER_CODE = 97
 const MAX_LOWERCASE_LETTER_CODE = 122
 
+const hasInvalidCharacters = (characters) =>
+  characters.some((character) =>
+    isNaN(character) || character < MIN_LOWERCASE_LETTER_CODE || character > MAX_LOWERCASE_LETTER_CODE)
+
 const decipherWord = (word) => {
   const separatedChars = []
   let currentChar = ''
@@ -9,10 +13,7 @@ const decipherWord = (word) => {
     if (currentChar === '9') separatedChars.push(Number(`${currentChar}${word[++i]}`))
     else separatedChars.push(Number(`${currentChar}${word[++i]}${word[++i]}`))
   }
-
-  const invalidCharacters = separatedChars.some((character) =>
-    isNaN(character) || character < MIN_LOWERCASE_LETTER_CODE || character > MAX_LOWERCASE_LETTER_CODE)
-  if (invalidCharacters) return 'The code has strange characters'
+  if (hasInvalidCharacters(separatedChars)) return 'The code has strange characters'
 
   return separatedChars.map(char => String.fromCharCode(char)).join('')
 }
