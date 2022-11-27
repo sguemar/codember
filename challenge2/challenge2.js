@@ -6,20 +6,24 @@ const hasInvalidCharacters = (characters) =>
     isNaN(character) || character < MIN_LOWERCASE_LETTER_CODE || character > MAX_LOWERCASE_LETTER_CODE)
 
 const decipherWord = (word) => {
-  const separatedChars = []
+  const codedChars = []
   let currentChar = ''
+
   for (let i = 0; i < word.length; i++) {
     currentChar = word[i]
-    if (currentChar === '9') separatedChars.push(Number(`${currentChar}${word[++i]}`))
-    else separatedChars.push(Number(`${currentChar}${word[++i]}${word[++i]}`))
+    if (currentChar === '9') codedChars.push(Number(`${currentChar}${word[++i]}`))
+    else codedChars.push(Number(`${currentChar}${word[++i]}${word[++i]}`))
   }
-  if (hasInvalidCharacters(separatedChars)) return 'The code has strange characters'
 
-  return separatedChars.map(char => String.fromCharCode(char)).join('')
+  if (hasInvalidCharacters(codedChars)) return 'The code has strange characters'
+
+  return codedChars.map(char => String.fromCharCode(char)).join('')
 }
 
 export const decipherMessage = (message) => {
   if (typeof message !== 'string') throw new Error('parameter provided must be a string')
 
-  return decipherWord(message)
+  const words = message.split(' ')
+
+  return words.map(word => decipherWord(word)).join(' ')
 }
