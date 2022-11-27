@@ -45,4 +45,11 @@ describe('Catch those cybercriminals!', () => {
     expect(decipherMessage('11210897121')).toBe('play')
     expect(decipherMessage('116101116114105115')).toBe('tetris')
   })
+
+  it('should return the sequence of characters equivalents to the ASCII code sentence provided by parameter', () => {
+    expect(decipherMessage('109105100117 100101118')).toBe('midu dev')
+    expect(decipherMessage('105 11210897121 9911110010110998101114')).toBe('i play codember')
+    expect(decipherMessage('105 11210897121 116101116114105115')).toBe('i play tetris')
+    expect(decipherMessage('9911110010110998101114 105115 97 103111111100 10397109101')).toBe('codember is a good game')
+  })
 })
