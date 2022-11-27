@@ -1,15 +1,13 @@
 const MIN_LOWERCASE_LETTER_CODE = 97
 const MAX_LOWERCASE_LETTER_CODE = 122
 
-export const decipherMessage = (message) => {
-  if (typeof message !== 'string') throw new Error('parameter provided must be a string')
-
+const decipherWord = (word) => {
   const separatedChars = []
   let currentChar = ''
-  for (let i = 0; i < message.length; i++) {
-    currentChar = message[i]
-    if (currentChar === '9') separatedChars.push(Number(`${currentChar}${message[++i]}`))
-    else separatedChars.push(Number(`${currentChar}${message[++i]}${message[++i]}`))
+  for (let i = 0; i < word.length; i++) {
+    currentChar = word[i]
+    if (currentChar === '9') separatedChars.push(Number(`${currentChar}${word[++i]}`))
+    else separatedChars.push(Number(`${currentChar}${word[++i]}${word[++i]}`))
   }
 
   const invalidCharacters = separatedChars.some((character) =>
@@ -17,4 +15,10 @@ export const decipherMessage = (message) => {
   if (invalidCharacters) return 'The code has strange characters'
 
   return separatedChars.map(char => String.fromCharCode(char)).join('')
+}
+
+export const decipherMessage = (message) => {
+  if (typeof message !== 'string') throw new Error('parameter provided must be a string')
+
+  return decipherWord(message)
 }
