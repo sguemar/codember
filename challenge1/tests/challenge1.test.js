@@ -12,7 +12,10 @@ describe('Fix twitter!', () => {
   })
 
   it('should throw an specific error message if not string is provided as parameter', () => {
-    expect(() => removeBots()).toThrow('parameter provided must be a string')
+    const errorMessage = 'parameter provided must be a string'
+    expect(() => removeBots({})).toThrow(errorMessage)
+    expect(() => removeBots(1)).toThrow(errorMessage)
+    expect(() => removeBots(true)).toThrow(errorMessage)
   })
 
   it('should return "No users found" if an empty string is provided as parameter', () => {
