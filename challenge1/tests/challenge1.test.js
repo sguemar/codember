@@ -3,6 +3,8 @@ import { removeBots } from '../challenge1'
 import { twoValidUsers, twoValidUsersInDifferentLines, userInDifferentLines } from './userExamples'
 
 describe('Fix twitter!', () => {
+  const noUsersMessage = 'No users found'
+
   it('should be a function', () => {
     expect(typeof removeBots).toBe('function')
   })
@@ -18,19 +20,19 @@ describe('Fix twitter!', () => {
     expect(() => removeBots(true)).toThrow(errorMessage)
   })
 
-  it('should return "No users found" if an empty string is provided as parameter', () => {
-    expect(removeBots('')).toBe('No users found')
+  it(`should return "${noUsersMessage}" if an empty string is provided as parameter`, () => {
+    expect(removeBots('')).toBe(noUsersMessage)
   })
 
-  it('should return "No users found" if only one invalid user is provided', () => {
+  it(`should return "${noUsersMessage}" if only one invalid user is provided`, () => {
     let invalidUser = 'usr:@midudev psw:123456 age:22 loc:bcn fll:82'
-    expect(removeBots(invalidUser)).toBe('No users found')
+    expect(removeBots(invalidUser)).toBe(noUsersMessage)
     invalidUser = 'eme:mi@gmail.com psw:123456 age:22 loc:bcn fll:82'
-    expect(removeBots(invalidUser)).toBe('No users found')
+    expect(removeBots(invalidUser)).toBe(noUsersMessage)
     invalidUser = 'psw:abcd123 aaa:435'
-    expect(removeBots(invalidUser)).toBe('No users found')
+    expect(removeBots(invalidUser)).toBe(noUsersMessage)
     invalidUser = 'fll:45'
-    expect(removeBots(invalidUser)).toBe('No users found')
+    expect(removeBots(invalidUser)).toBe(noUsersMessage)
   })
 
   it('should return 1 + user name if only one valid user (a user with usr, eme, psw, age, loc and fll fields) is provided', () => {
