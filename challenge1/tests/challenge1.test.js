@@ -22,10 +22,6 @@ describe('Fix twitter!', () => {
     expect(removeBots('')).toBe('No users found')
   })
 
-  it('should return "No users found" if an empty string is provided as parameter', () => {
-    expect(removeBots('')).toBe('No users found')
-  })
-
   it('should return "No users found" if only one invalid user is provided', () => {
     let invalidUser = 'usr:@midudev psw:123456 age:22 loc:bcn fll:82'
     expect(removeBots(invalidUser)).toBe('No users found')
