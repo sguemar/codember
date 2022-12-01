@@ -8,6 +8,6 @@ Solutions to [codember](https://codember.dev/) challenges.
 |:---------:|:---------------------------:|:-----------------------------------------:|
 | 1         | Fix twitter                 | [Challenge 1](./challenge1/challenge1.js) |
 | 2         | Catch those cybercriminals! | [Challenge 2](./challenge2/challenge2.js) |
-| 3         | Zebra of colors             | ❌                                        |
+| 3         | Zebra of colors             | [Challenge 3](./challenge3/challenge3.js) |
 | 4         | Dude, I lost my password    | ❌                                        |
 
