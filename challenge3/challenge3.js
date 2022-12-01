@@ -9,13 +9,7 @@ export const getLongestZebra = (lights) => {
   let previousColor = null
   const zebraColors = [lights[0], lights[1]]
 
-  if (zebraColors[0] !== zebraColors[1]) {
-    maxZebraLength = 2
-    currentZebraLength = 2
-    lastColor = zebraColors[1]
-  }
-
-  for (let i = 2; i < lights.length; i++) {
+  for (let i = 1; i < lights.length; i++) {
     currentColor = lights[i]
     previousColor = lights[i - 1]
     if (currentZebraLength > 0) {
