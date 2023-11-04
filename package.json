@@ -20,8 +20,8 @@
   },
   "homepage": "https://github.com/sguemar/codember-challenges#readme",
   "devDependencies": {
-    "standard": "17.0.0",
-    "vitest": "^0.25.2"
+    "standard": "17.1.0",
+    "vitest": "0.34.6"
   },
   "eslintConfig": {
     "extends": "./node_modules/standard/eslintrc.json"
