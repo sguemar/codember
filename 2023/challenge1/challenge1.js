@@ -1,8 +1,8 @@
 export const decipherMessage = (message) => {
-  if (message === undefined) throw new Error()
+  if (typeof message !== 'string') throw new Error()
   if (message.length === 0) return ''
 
-  const messageWords = message.split(' ').map(word => word.toLowerCase())
+  const messageWords = message.toLowerCase().split(' ')
   const words = []
   const wordsCount = {}
 
@@ -15,10 +15,6 @@ export const decipherMessage = (message) => {
     }
   })
 
-  let result = ''
-  words.forEach(word => {
-    result = result.concat(word, wordsCount[word])
-  })
+  return words.reduce((acc, word) => acc + `${word}${wordsCount[word]}`, "")
 
-  return result
 }
