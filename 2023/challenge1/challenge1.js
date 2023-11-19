@@ -15,6 +15,5 @@ export const decipherMessage = (message) => {
     }
   })
 
-  return words.reduce((acc, word) => acc + `${word}${wordsCount[word]}`, "")
-
+  return words.reduce((acc, word) => acc + `${word}${wordsCount[word]}`, '')
 }
